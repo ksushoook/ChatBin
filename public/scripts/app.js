@@ -1,5 +1,5 @@
 const
-    host = "localhost:3000",
+    host = document.location.host,
     currentChat = document.location.pathname.slice(1),
     socket = io(host)
 

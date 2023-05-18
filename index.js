@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const PORT = process.env.PORT || 3000
 
 const path = require("path")
@@ -20,7 +22,7 @@ expApp.get("/", (req, res)=>{
     res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 expApp.get("/newchat", (req, res) => {
-    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
     const newChat = Array(5).fill(undefined).reduce(prev=>prev+letters.at(Math.floor(Math.random()*letters.length)), "")
     chats.set(newChat, new Set())
     console.log(`\n ---> new chat chats[${newChat}], inited by ${req.ip}`)
