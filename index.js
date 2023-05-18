@@ -23,7 +23,7 @@ expApp.get("/", (req, res)=>{
 })
 expApp.get("/newchat", (req, res) => {
     const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-    console.log(letters.at)
+    console.log(letters)
     const newChat = Array(5).fill(undefined).reduce(prev=>prev+letters.at(Math.floor(Math.random()*letters.length)), "")
     chats.set(newChat, new Set())
     console.log(`\n ---> new chat chats[${newChat}], inited by ${req.ip}`)
