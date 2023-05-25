@@ -11,4 +11,4 @@ class NotificationsApi {
         nf.onclick = this.openFunc
     }
 }
-notificationsApi = new NotificationsApi(()=>window.open(this.location))
+notificationsApi = new NotificationsApi(()=>window.focus())
