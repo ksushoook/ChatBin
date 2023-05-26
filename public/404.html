@@ -16,9 +16,12 @@
     <main class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh">
         <h1 style="font-size: 96px;" class="mb-1 lh-1"> 404 </h1>
         <h3> Not found </h3>
-        <a href="/" class="btn btn-primary btn-lg fs-2 mt-4"> <img src="imgs/chatbin.svg" alt="logo" height="100" class="mt-1"> </a>
+        <a href="/" class="btn btn-primary btn-lg fs-2 mt-4" id="autofocus">
+            <img src="imgs/chatbin.svg" alt="logo" height="100" class="mt-1" />
+        </a>
         <h5 class="text-secondary"> Creating chats with custom links is not available </h5>
     </main>
 
+    <script>document.querySelector('#autofocus').focus()</script>
 </body>
 </html>

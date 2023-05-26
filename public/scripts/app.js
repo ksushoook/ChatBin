@@ -1,11 +1,17 @@
 const socket = io(location.host);
 const currentChat = location.pathname.slice(1);
 
+document.title = "ChatBin - " + currentChat
+
 let currentUser = "";
 
 socket.emit("trying-to-connect", currentChat)
 
-const modal = new bootstrap.Modal(document.querySelector('#modal'))
+const modalElement = document.querySelector('#modal')
+const modal = new bootstrap.Modal(modalElement)
+modalElement.addEventListener('shown.bs.modal', () => {
+    form.uname.focus()
+})
 modal.show()
 
 const form = document.forms[0]
@@ -23,6 +29,7 @@ form.addEventListener("submit", (e) => {
                         data?.forEach(el =>
                             new UserListEl(el).render()
                         )
+                        msgInput.focus()
                     })
                 socket.emit("user-connect", currentUser)
                 modal.hide()
@@ -34,7 +41,7 @@ form.addEventListener("submit", (e) => {
 
 const
     msgContainer = document.querySelector("#msg-container"),
-    submitButton = document.querySelector("#submit"),
+    submitButton = document.querySelector("#submitButton"),
     msgInput = document.querySelector("#text-input")
 
 window.addEventListener("keydown", (e) => {
@@ -61,8 +68,7 @@ socket.on("client-trying-to-connect", () =>
 )
 socket.on("client-user-connect", (e) => {
     toast.hide()
-    new Message(
-        `
+    new Message(`
             <u><b>${e}</b></u>
             <img
                 src="${hashMapApi.link(e)}"
