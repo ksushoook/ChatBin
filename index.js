@@ -79,7 +79,7 @@ io.on("connection", (socket) => {
     })
 
     socket.on("message", (text, owner) => {
-        socket.to(clientChat).emit("client-message", [text, owner])
+        socket.to(clientChat).emit("client-message", text, owner)
         socket.emit("client-message", text, owner)
     })
 

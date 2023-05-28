@@ -4,11 +4,13 @@ class NotificationsApi {
         this.openFunc = func
     }
     notification(owner, text, img){
+        console.log(arguments)
         const nf = new Notification(`${owner}`, {
             body: text,
             icon: img
         });
         nf.onclick = this.openFunc
+        console.log(nf)
     }
 }
-notificationsApi = new NotificationsApi(()=>window.focus())
+const notificationsApi = new NotificationsApi(()=>window.focus())

@@ -83,11 +83,11 @@ socket.on("client-user-connect", (e) => {
     if (e !== currentUser)
         new UserListEl(e).render()
 })
-socket.on("user-disconnect", (e) => {
+socket.on("user-disconnect", (user) => {
     new Message(`
-        <u><b>${e}</b></u>
+        <u><b>${user}</b></u>
         <img
-            src="${hashMapApi.link(e)}"
+            src="${hashMapApi.link(user)}"
             alt=""
             class="mx-2"
             height="24px"
@@ -97,9 +97,9 @@ socket.on("user-disconnect", (e) => {
     `,
     null,
     "connection"
-    ).render().notify(`${e} disconnected`)
+    ).render().notify(`${user} disconnected`)
 
-    document.querySelector(`#user-list #${e}`).remove()
+    document.querySelector(`#user-list #${user}`).remove()
 })
 
 socket.on("client-message", (text, owner) =>
