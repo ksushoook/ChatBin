@@ -1,9 +1,9 @@
 class HashMapApi{
     constructor() {
-        this.host = "https://picsum.photos"
+        this.host = "http://167.172.179.35:3001/picsum"
     }
     link(seed, w=64, h=64){
-        return `${this.host}/seed/${seed}/${w}/${h}`
+        return `${this.host}?seed=${encodeURIComponent(seed)}`
     }
 }
 
