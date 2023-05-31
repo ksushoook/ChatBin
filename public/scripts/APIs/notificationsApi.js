@@ -10,7 +10,6 @@ class NotificationsApi {
             icon: img
         });
         nf.onclick = this.openFunc
-        console.log(nf)
     }
 }
 const notificationsApi = new NotificationsApi(()=>window.focus())

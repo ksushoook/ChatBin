@@ -58,7 +58,6 @@ class Message {
         return this
     }
     notify(text){
-        console.log(`${location.origin}/imgs/favicon.svg`)
         if(document.hasFocus())
             return this
         if(this.owner===null){

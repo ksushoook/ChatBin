@@ -14,7 +14,7 @@ class UserListEl {
                 style="display: ${currentListDisplay}"
             > ${this.name} </span>
             <img
-                src="http://167.172.179.35:3001/render?seed=${encodeURIComponent(this.name)}"
+                src="${hashMapApi.link(this.name)}"
                 alt="${this.name}"
                 class="rounded rounded-circle bg-light my-1"
             >
