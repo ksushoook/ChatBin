@@ -71,7 +71,7 @@ socket.on("client-user-connect", (e) => {
     new Message(`
             <u><b>${e}</b></u>
             <img
-                src="${hashMapApi.link(e)}"
+                src="${randomImgAPI.picsum(e)}"
                 alt=""
                 class="mx-2" height="24px" width="24px"
             />
@@ -87,7 +87,7 @@ socket.on("user-disconnect", (user) => {
     new Message(`
         <u><b>${user}</b></u>
         <img
-            src="${hashMapApi.link(user)}"
+            src="${randomImgAPI.picsum(user)}"
             alt=""
             class="mx-2"
             height="24px"

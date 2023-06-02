@@ -14,7 +14,7 @@ class UserListEl {
                 style="display: ${currentListDisplay}"
             > ${this.name} </span>
             <img
-                src="${hashMapApi.link(this.name)}"
+                src="${randomImgAPI.picsum(this.name)}"
                 alt="${this.name}"
                 class="rounded rounded-circle bg-light my-1"
             >
