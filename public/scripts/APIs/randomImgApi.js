@@ -14,4 +14,4 @@ class RandomImageAPI{
     }
 }
 
-const randomImgAPI = new RandomImageAPI()
+const randomImgApi = new RandomImageAPI()

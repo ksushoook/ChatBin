@@ -71,7 +71,7 @@ socket.on("client-user-connect", (e) => {
     new Message(`
             <u><b>${e}</b></u>
             <img
-                src="${randomImgAPI.picsum(e)}"
+                src="${randomImgApi.picsum(e)}"
                 alt=""
                 class="mx-2" height="24px" width="24px"
             />
@@ -84,10 +84,14 @@ socket.on("client-user-connect", (e) => {
         new UserListEl(e).render()
 })
 socket.on("user-disconnect", (user) => {
+    if(!user){
+        toast.hide()
+        return
+    }
     new Message(`
         <u><b>${user}</b></u>
         <img
-            src="${randomImgAPI.picsum(user)}"
+            src="${randomImgApi.picsum(user)}"
             alt=""
             class="mx-2"
             height="24px"
@@ -102,6 +106,7 @@ socket.on("user-disconnect", (user) => {
     document.querySelector(`#user-list #${user}`).remove()
 })
 
-socket.on("client-message", (text, owner) =>
+socket.on("client-message", (text, owner) => {
     new Message(text, owner).render().notify()
-)
+    msgInput.focus()
+})
