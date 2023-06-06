@@ -4,10 +4,15 @@ class NotificationsApi {
         this.openFunc = func
     }
     notification(owner, text, img){
-        console.log(arguments)
         const nf = new Notification(`${owner}`, {
             body: text,
-            icon: img
+            icon: img,
+            badge: img,
+            image: img,
+            data: {
+                url: location.toString(),
+                status: "open",
+            },
         });
         nf.onclick = this.openFunc
     }

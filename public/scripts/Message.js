@@ -38,7 +38,7 @@ class Message {
                         this.type === "msg" ?
                             `<div class="d-flex flex-column align-items-center user__info">
                                 <img
-                                    src="${randomImgAPI.picsum(this.owner)}"
+                                    src="${randomImgApi.picsum(this.owner)}"
                                     alt=""
                                     class="rounded mx-2 mx-md-4"
                                 >
@@ -74,7 +74,7 @@ class Message {
             notificationsApi.notification(
                 this.owner,
                 this.text,
-                randomImgAPI.picsum(this.owner)
+                randomImgApi.picsum(this.owner)
             )
 
         return this
